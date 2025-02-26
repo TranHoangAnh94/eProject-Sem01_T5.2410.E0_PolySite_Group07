@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment variables files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Package lock files
+package-lock.json
+yarn.lock
