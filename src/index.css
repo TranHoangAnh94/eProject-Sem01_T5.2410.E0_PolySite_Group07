@@ -242,7 +242,8 @@ header {
 
 /* Định dạng cho danh sách các mục trong Site Map */
 #site-map ul {
-    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+    list-style-type: none;
+    /* Loại bỏ dấu chấm đầu dòng */
     padding-left: 0;
     /* Loại bỏ khoảng cách trái mặc định */
     text-align: center;
@@ -1263,9 +1264,11 @@ a:hover {
 }
 
 /*Custom*/
+/* Phần Services */
 .services-section {
     padding: 4rem 2rem;
     background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    text-align: justify;
 }
 
 .services-title {
@@ -1354,8 +1357,6 @@ a:hover {
         padding: 3rem 1rem;
     }
 
-
-
     .services-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
@@ -1433,6 +1434,7 @@ a:hover {
     color: #666;
     max-width: 700px;
     margin: 0 auto;
+    text-align: justify;
 }
 
 /* Animation */
@@ -1451,6 +1453,107 @@ a:hover {
 .wow.fadeInUp {
     animation: slideIn 0.8s ease-out forwards;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature h1.display-4 {
+        font-size: 2rem;
+    }
+
+    .feature p.mb-0 {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .feature .text-center {
+        padding: 30px 15px;
+    }
+
+    .feature.bg-light::before {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature h1.display-4 {
+        font-size: 3.2rem;
+    }
+}
+
+/* Carousel */
+.carousel-item img {
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị méo */
+}
+
+
+/* Style for the additional content section */
+.additional-content {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+/* Heading styles */
+.additional-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraph style */
+.additional-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Unordered list style */
+.additional-content ul {
+    margin-left: 500px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+.additional-content ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.additional-content ul li::before {
+    content: '✔';
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Row and image styles */
+.additional-content .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.additional-content .col-md-6 {
+    flex: 1;
+}
+
+.additional-content img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.additional-content img:hover {
+    transform: scale(1.05);
+}
+
 
 /*Delivery*/
 .delivery-section {
@@ -1505,6 +1608,63 @@ a:hover {
     font-size: 0.9rem;
     color: #6c757d;
 }
+
+/* Styling for the additional content section */
+.additional-content {
+    margin-top: 5rem;
+    /* Adds margin-top (from mt-5 class) */
+    text-align: center;
+    /* Centers the text horizontally (from text-center class) */
+    padding: 3rem 0;
+    /* Padding at the top and bottom of the section */
+    background-color: #f8f9fa;
+    /* Light background for the section */
+}
+
+/* Heading Style (for h4) */
+.additional-content h4 {
+    font-size: 2rem;
+    /* Font size for the heading */
+    font-weight: 600;
+    /* Semi-bold text */
+    color: #007bff;
+    /* Primary blue color for the heading */
+    margin-bottom: 1rem;
+    /* Margin below the heading */
+}
+
+/* Paragraph Style (for p) */
+.additional-content p {
+    font-size: 1.125rem;
+    /* Slightly larger font size for readability */
+    color: #6c757d;
+    /* Light gray color for the text */
+    line-height: 1.6;
+    /* Line height to improve readability */
+    margin-bottom: 2rem;
+    /* Adds space below the paragraph */
+    max-width: 800px;
+    /* Limits the width of the paragraph */
+    margin-left: auto;
+    /* Centers the paragraph horizontally */
+    margin-right: auto;
+    /* Centers the paragraph horizontally */
+}
+
+/* Image Style (for img) */
+.additional-content img {
+    max-width: 100%;
+    /* Ensures the image is responsive and doesn't overflow */
+    height: auto;
+    /* Keeps the aspect ratio of the image */
+    border-radius: 8px;
+    /* Optional: Round corners for the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a shadow for the image */
+    margin-top: 1.5rem;
+    /* Adds space above the image */
+}
+
 
 /*Printing*/
 .printing-section {
@@ -1568,7 +1728,7 @@ a:hover {
     font-weight: bold;
 }
 
-/*Oder*/
+/*Order*/
 
 .error {
     color: red;
@@ -1746,7 +1906,7 @@ h2 {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    width: 280px;
+    width: 470px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1796,108 +1956,85 @@ h2 {
     background-color: #0056b3;
 }
 
-/*Library*/
-/* General container styling */
-.library-container {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 30px;
-    font-family: Arial, sans-serif;
-}
+/*Gallery*/
 
-/* Title of the Library */
-.library-container h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 50px;
-}
-
-/* Styling for each section by product type */
-.library-type-section {
-    margin-bottom: 50px;
-}
-
-/* Title of each type section (e.g., Chai 10ml) */
-.library-type-section h2 {
-    font-size: 2em;
-    color: #2e8b57;
-    /* Green color for section titles */
+/* gallery-tittle */
+.gallery-tittle {
+    font-size: 6rem;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-/* Container for the list of products, display types vertically */
-.library-product-list {
-    display: flex;
-    flex-direction: column;
-    /* Các type sẽ hiển thị theo chiều dọc */
-    gap: 40px;
-}
-
-/* Styling for individual product items container */
-.library-products {
-    display: flex;
-    /* Đặt các sản phẩm nằm trên một hàng */
-    flex-wrap: wrap;
-    /* Cho phép các sản phẩm xuống dòng khi không đủ chỗ */
-    gap: 40px;
-    justify-content: center;
-    /* Căn chỉnh sản phẩm về phía trái */
-}
-
-/* Styling for individual product items */
-.library-product-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    border: 1px solid #eee;
-    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffdd, #0048ff, #aa00ff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s infinite linear;
 }
 
-/* Hover effect for product items */
-.library-product-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
 }
 
-/* Styling for product image */
-.library-product-image {
+/* gallery-img */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cột */
+    grid-template-rows: repeat(2, 1fr);
+    /* 2 hàng */
+    gap: 20px;
+    /* Tăng khoảng cách giữa ảnh */
+    width: 90vw;
+    /* Chiếm toàn bộ chiều rộng */
+    max-width: 12000px;
+    /* Giới hạn tối đa */
+    margin: 0 auto;
+    /* Căn giữa nếu cần */
+}
+
+.grid-item {
+    position: relative;
     width: 100%;
-    height: 200px;
+    height: 450px;
+    /* Tăng chiều cao ảnh */
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    /* Giữ tỷ lệ ảnh, tránh bị méo */
+    display: block;
 }
 
-/* Styling for product name */
-.library-product-item h3 {
-    font-size: 1.3em;
-    color: #333;
-    margin: 10px 0;
-    font-weight: bold;
+/* Căn chỉnh tiêu đề trên ảnh */
+.grid-item .display-5 {
+    position: absolute;
+    width: 90%;
+    max-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    /* Chữ to hơn */
+    font-weight: 400;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.56);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-/* Styling for product price */
-.library-price {
-    font-size: 1.5em;
-    color: #2e8b57;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* Styling for product description */
-.library-product-item p {
-    color: #666;
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-top: 10px;
-}
 
 /* Styling for the "View Details" button */
 .view-details-button {
@@ -1917,3 +2054,86 @@ h2 {
     background-color: #3cb371;
     /* Làm màu sáng hơn khi hover */
 }
+
+/*Product search*/
+/* Căn chỉnh form tìm kiếm */
+.product-search {
+    max-width: 300px;
+    /* Đặt chiều rộng tối đa cho form */
+    /* Căn giữa form */
+    padding: 10px 15px;
+    border-radius: 30px;
+    /* Bo tròn góc cho form */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ cho form */
+    background-color: #fff;
+    /* Màu nền trắng cho form */
+}
+
+/* Style cho input tìm kiếm */
+.product-search input {
+    border-radius: 20px;
+    /* Bo tròn góc của input */
+    border: 1px solid #ced4da;
+    /* Màu viền nhẹ nhàng cho input */
+    padding: 10px 15px;
+    /* Khoảng cách trong input */
+    font-size: 16px;
+    /* Cỡ chữ cho input */
+    transition: border-color 0.3s ease-in-out;
+    /* Hiệu ứng chuyển màu viền */
+}
+
+/* Style khi người dùng hover vào input */
+.product-search input:focus {
+    border-color: #28a745;
+    /* Màu viền khi input được chọn */
+    outline: none;
+    /* Loại bỏ viền mặc định */
+}
+
+/* Style cho button tìm kiếm */
+.product-search button {
+    border-radius: 20px;
+    /* Bo tròn góc cho button */
+    background-color: #28a745;
+    /* Màu nền xanh lá cho button */
+    color: white;
+    /* Màu chữ trắng */
+    padding: 10px 20px;
+    /* Khoảng cách trong button */
+    border: none;
+    /* Loại bỏ viền của button */
+    font-size: 16px;
+    /* Cỡ chữ cho button */
+    transition: background-color 0.3s ease-in-out;
+    /* Hiệu ứng chuyển màu nền */
+}
+
+/* Style khi người dùng hover vào button */
+.product-search button:hover {
+    background-color: #218838;
+    /* Màu nền button khi hover */
+}
+
+/* Style cho button khi button bị disabled */
+.product-search button:disabled {
+    background-color: #6c757d;
+    /* Màu xám khi button bị disabled */
+    cursor: not-allowed;
+    /* Đổi con trỏ chuột thành không được phép */
+}
+
+/*Hieu ung*/
+.scroll-element {
+    opacity: 0;
+    transform: translateY(50px); /* Đặt phần tử ở dưới */
+    transition: all 0.5s ease-out;
+  }
+  
+  .scroll-element.active {
+    opacity: 1;
+    transform: translateY(0); /* Phần tử sẽ di chuyển lên khi vào viewport */
+  }
+  
+

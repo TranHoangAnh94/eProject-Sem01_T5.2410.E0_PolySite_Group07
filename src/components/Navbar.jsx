@@ -5,15 +5,23 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [query, setQuery] = useState(""); // Khai báo query để lưu trữ giá trị tìm kiếm
-    const [dropdownOpen, setDropdownOpen] = useState(false);
     const [products, setProducts] = useState([]); // State lưu trữ sản phẩm từ JSON
     const navigate = useNavigate(); // Hook để điều hướng
+    const [openDropdowns, setOpenDropdowns] = useState({}); // Lưu trạng thái mở/đóng của mỗi dropdown
 
     // Hàm tìm kiếm
     const handleSearch = (event) => {
         event.preventDefault();
         // Khi người dùng nhấn search, chuyển đến trang ProductSearch và truyền query tìm kiếm
         navigate(`/product-search?q=${query}`);
+    };
+
+    // Hàm toggle dropdown
+    const handleDropdownToggle = (index) => {
+        setOpenDropdowns((prev) => ({
+            ...prev,
+            [index]: !prev[index], // Chuyển trạng thái mở/đóng của dropdown tương ứng
+        }));
     };
 
     // Tải dữ liệu từ file JSON khi component được mount
@@ -77,11 +85,12 @@ const Navbar = () => {
                 >
                     About Us
                 </NavLink>
+
                 {/* Dropdown Products */}
                 <div
                     className="dropdown"
-                    onMouseEnter={() => setDropdownOpen(true)}  // Mở dropdown khi hover vào
-                    onMouseLeave={() => setDropdownOpen(false)} // Đóng dropdown khi rời chuột
+                    onMouseEnter={() => handleDropdownToggle(0)}  // Mở dropdown khi hover vào
+                    onMouseLeave={() => handleDropdownToggle(0)} // Đóng dropdown khi rời chuột
                 >
                     <NavLink
                         to="/product"
@@ -89,11 +98,11 @@ const Navbar = () => {
                     >
                         Products
                     </NavLink>
-                    {dropdownOpen && (
-                        <div className="dropdown-content" aria-expanded={dropdownOpen}>
+                    {openDropdowns[0] && ( // Kiểm tra dropdown nào đang mở
+                        <div className="dropdown-content" aria-expanded={openDropdowns[0]}>
                             {/* Duyệt qua mảng sản phẩm đã lọc */}
                             {uniqueProducts.length > 0 ? (
-                                uniqueProducts.map((product, index) => (
+                                uniqueProducts.map((product) => (
                                     <NavLink
                                         key={product.id} // Sử dụng id làm key
                                         to={`/product?type=${product.type}`} // Chuyển đến trang ProductList với type được chọn
@@ -112,8 +121,8 @@ const Navbar = () => {
                 {/* Dropdown Services */}
                 <div
                     className="dropdown"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
+                    onMouseEnter={() => handleDropdownToggle(1)} // Mở dropdown Services khi hover vào
+                    onMouseLeave={() => handleDropdownToggle(1)} // Đóng dropdown Services khi rời chuột
                 >
                     <NavLink
                         to="/Services"
@@ -121,8 +130,8 @@ const Navbar = () => {
                     >
                         Services
                     </NavLink>
-                    {dropdownOpen && (
-                        <div className="dropdown-content" aria-expanded={dropdownOpen}>
+                    {openDropdowns[1] && (
+                        <div className="dropdown-content" aria-expanded={openDropdowns[1]}>
                             <NavLink
                                 to="/Services/Custom"
                                 className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
@@ -144,6 +153,7 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
+
                 <NavLink
                     to="/Library"
                     className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
@@ -156,8 +166,9 @@ const Navbar = () => {
                 >
                     Contact Us
                 </NavLink>
+
                 {/* Product Search Form */}
-                <form className="d-flex feedback-form" onSubmit={handleSearch}>
+                <form className="d-flex product-search" onSubmit={handleSearch}>
                     <input
                         className="form-control me-2"
                         type="search"

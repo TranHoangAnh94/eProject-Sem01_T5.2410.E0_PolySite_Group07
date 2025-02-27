@@ -1,4 +1,8 @@
 import React from 'react';
+import { Carousel } from 'react-bootstrap'; // Ensure you have react-bootstrap installed
+import pri1 from "./image/Our Printing Projects 6.jpg"
+import pri2 from "./image/Our Printing Projects 7.jpg"
+import pri3 from "./image/Our Printing Projects 8.jpg"
 
 const PrintingSection = () => {
   return (
@@ -8,6 +12,9 @@ const PrintingSection = () => {
           <h4 className="text-primary">Printing & Labeling</h4>
           <h2 className="display-5 mb-4">Professional Printing Solutions</h2>
           <p className="lead">Advanced printing technology for sharp quality and superior color durability</p>
+          <p>
+            At Polysite, we understand the importance of high-quality printing and labeling for your products. Our state-of-the-art technology ensures that your branding stands out and meets industry standards.
+          </p>
         </div>
 
         <div className="row g-4">
@@ -36,7 +43,7 @@ const PrintingSection = () => {
               <ul className="printing-features">
                 <li>QR Code Barcode</li>
                 <li>Nutritional Composition</li>
-                <li>becomes Instructions for use</li>
+                <li>Instructions for use</li>
               </ul>
             </div>
           </div>
@@ -70,6 +77,46 @@ const PrintingSection = () => {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Carousel Section */}
+        <div className="carousel-section py-5">
+          <h2 className="text-center mb-4">Our Printing Projects</h2>
+          <Carousel id="printingCarousel">
+            <Carousel.Item>
+              <img
+                src={pri1}
+                className="d-block w-100"
+                alt="Project 1"
+              />
+              <Carousel.Caption>
+                <h5>Project 1</h5>
+                <p>Description of project 1.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={pri2}
+                className="d-block w-100"
+                alt="Project 2"
+              />
+              <Carousel.Caption>
+                <h5>Project 2</h5>
+                <p>Description of project 2.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={pri3}
+                className="d-block w-100"
+                alt="Project 3"
+              />
+              <Carousel.Caption>
+                <h5>Project 3</h5>
+                <p>Description of project 3.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ import PrintingSection from "./components/Printing.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import OrderForm from "./components/Order.jsx";
 import Services from "./components/Services.jsx";
-import Library from "./components/Library.jsx";
+import GallerySection from "./components/Gallery.jsx";
 
 
 const App = () => {
@@ -47,7 +47,7 @@ const App = () => {
             <Route path="/Services/Printing" element={<PrintingSection />} />
             <Route path="/Oder" element={<OrderForm />} />
             <Route path="/Services" element={<Services />} />
-            <Route path="/Library" element={<Library />} />
+            <Route path="/Library" element={<GallerySection />} />
           </Route>
         </Routes>
       </BrowserRouter>

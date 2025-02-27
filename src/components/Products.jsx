@@ -7,7 +7,6 @@ const ProductList = () => {
     const [selectedType, setSelectedType] = useState(''); // Lưu type đã chọn
     const navigate = useNavigate();  // Hook để điều hướng trong React Router
     const location = useLocation(); // Để lấy thông tin từ query string trong URL
-
     useEffect(() => {
         fetch('/sp.json')
             .then(response => response.json())

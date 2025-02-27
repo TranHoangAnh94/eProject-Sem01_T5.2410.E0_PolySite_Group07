@@ -19,6 +19,7 @@ const Homepage = () => {
             .then((data) => setProducts(data))
             .catch((error) => console.error("Error loading the products data:", error));
     }, []);
+    
 
     // Lọc ra các loại sản phẩm duy nhất
     const uniqueTypes = Array.from(new Set(products.map((product) => product.type)))
@@ -28,8 +29,8 @@ const Homepage = () => {
     return (
         <>
             <Carousel />
-            <div className="products-heading"><h2>OUR PRODUCTS</h2></div>
-            <section className="product-list">
+            <div className="products-heading "><h2 >OUR PRODUCTS</h2></div>
+            <section className="product-list ">
                 <div className="products">
                     {uniqueTypes.map((product) => (
                         <div className="product-info" key={product.id}>

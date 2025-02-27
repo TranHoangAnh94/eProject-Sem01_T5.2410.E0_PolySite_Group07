@@ -32,6 +32,7 @@ const OrderForm = () => {
   const handleRemove = (index) => {
     const updatedCart = cartData.filter((_, i) => i !== index);
     setCartData(updatedCart);
+    localStorage.setItem('cartData', JSON.stringify(updatedCart));
     updateTotalPayment();
   };
 
