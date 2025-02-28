@@ -22,11 +22,11 @@ PolySite
 
 =======================================
 
-Documentations : https://github.com/L3nhan/gitHUBPush/tree/master/Documentations
+Documentations : https://github.com/TranHoangAnh94/eProject-Sem01_T5.2410.E0_PolySite_Group07/tree/main/Documentation
 
 =======================================
 
-Published website : https://l3nhan.github.io/doodle_group01/
+Published website : https://polysite.htuanqn.id.vn/
 
 =======================================
 
